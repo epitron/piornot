@@ -1,0 +1,16 @@
+- unless @correct.nil?
+  - if @correct
+    %h2 Yes! That was PI!
+  - else
+    %h2 NOT PI.
+
+- if @score
+  Score: #{@score}/#{@total} (#{@percent})
+
+- @data.each_with_index do |data, index|
+  %p
+    %a{href: "?guess=#{index}"}
+      = data
+
+
+%a{href: "?reset=true"} Reset

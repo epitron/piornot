@@ -20,7 +20,7 @@ class HomeController < ApplicationController
 
 private
 
-  def some_pi(amount=60)
+  def some_pi(amount=80)
     open("pi.txt", "rb") do |f|
       max = f.size - amount
       min = 2
@@ -36,7 +36,7 @@ private
   end
 
 
-  def some_random(amount=60)
+  def some_random(amount=80)
     (0...amount).map { rand(0..9) }.join ''
   end
 

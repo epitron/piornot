@@ -11,3 +11,25 @@
  *= require_self
  *= require_tree .
  */
+
+body {
+  font-family: "Lucida Sans Unicode", "Lucida Grande", Verdana, Geneva, sans-serif;
+}
+
+.data a {
+  color: blue;
+  text-decoration: none;
+}
+
+a.reset {
+  float: right;
+  color: #007700;
+}
+
+h1.correct {
+  color: green;
+}
+
+h1.wrong {
+  color: red;
+}

@@ -1,16 +1,24 @@
-- unless @correct.nil?
-  - if @correct
-    %h2 Yes! That was PI!
+
+%center
+  - if @correct.nil?
+    %h1 Which one is &pi;?
   - else
-    %h2 NOT PI.
+    - if @correct
+      %h1.correct Yes! That was &pi;!
+    - else
+      %h1.wrong NOT &pi;.
+
+  %hr
+
+  - @data.each_with_index do |data, index|
+    %p.data
+      %a{href: "?guess=#{index}"}
+        = data
+
+%hr
 
 - if @score
-  Score: #{@score}/#{@total} (#{@percent})
-
-- @data.each_with_index do |data, index|
-  %p
-    %a{href: "?guess=#{index}"}
-      = data
+  (Score: #{@score}/#{@total} => #{@percent})
 
 
-%a{href: "?reset=true"} Reset
+%a.reset{href: "?reset=true"} Reset

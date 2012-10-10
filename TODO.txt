@@ -6,6 +6,10 @@
   |_ File.read("2012-10-10.bin").bytes.map{ |x| x.ord.to_s(16) }.join("").gsub(/[a-f]/,'')
   |_ http://jelzo.com/stuff/moo
 * Make numbers the same width as the bars
+* JQueryize it
+  - AJAX submits
+  - Animated YES! or NO! thing
+* a "WTF is this?" link
 * Store current counter in session, instead of database (or redis)
 * Log results to database (for analysis)
 * Easy deployment script

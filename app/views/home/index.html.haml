@@ -13,11 +13,13 @@
   - @data.each_with_index do |data, index|
     %p.data
       - if index == 0
-        %span.sparkline= data.chars.to_a.join(",")
-        %a{href: "?guess=#{index}"}= data
+        %a{href: "?guess=#{index}"}
+          %span.sparkline= data.chars.to_a.join(",")
+          = data
       - else
-        %a{href: "?guess=#{index}"}= data
-        %span.sparkline= data.chars.map{|c| -c.to_i}.join(",")
+        %a{href: "?guess=#{index}"}
+          = data
+          %span.sparkline= data.chars.map{|c| -c.to_i}.join(",")
 
 %hr
 

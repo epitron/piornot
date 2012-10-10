@@ -19,6 +19,7 @@ body {
 .data a {
   color: blue;
   text-decoration: none;
+  // font-size: 10px;
 }
 
 a.reset {

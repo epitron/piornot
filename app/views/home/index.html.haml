@@ -12,8 +12,12 @@
 
   - @data.each_with_index do |data, index|
     %p.data
-      %a{href: "?guess=#{index}"}
-        = data
+      - if index == 0
+        %span.sparkline= data.chars.to_a.join(",")
+        %a{href: "?guess=#{index}"}= data
+      - else
+        %a{href: "?guess=#{index}"}= data
+        %span.sparkline= data.chars.map{|c| -c.to_i}.join(",")
 
 %hr
 
@@ -22,3 +26,21 @@
 
 
 %a.reset{href: "?reset=true"} Reset
+
+:javascript
+  rainbow = {
+    0: "#000",
+    1: "#00f",
+    2: "#0f0",
+    3: "#0ff",
+    4: "#f00",
+    5: "#f0f",
+    6: "#ff0",
+    7: "#f50",
+    8: "#50f",
+    9: "#5f5"
+  }
+
+  all_blue = { "-9:9": "#00f" }
+
+  $(".sparkline").sparkline("html", { type: 'bar', barWidth: 9, color: 'blue', colorMap: all_blue });

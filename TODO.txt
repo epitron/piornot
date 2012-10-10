@@ -1,0 +1,21 @@
+============================================================================
+                                                                    TODOs
+============================================================================
+
+* RANDOM.ORG numbers http://www.random.org/files/
+  |_ File.read("2012-10-10.bin").bytes.map{ |x| x.ord.to_s(16) }.join("").gsub(/[a-f]/,'')
+  |_ http://jelzo.com/stuff/moo
+* Make numbers the same width as the bars
+* Store current counter in session, instead of database (or redis)
+* Log results to database (for analysis)
+* Easy deployment script
+* Dropdowns:
+  - Type:
+    * PI vs. Random
+    * PI vs. Pseudorandom
+    * PI vs. e
+  - Difficulty:
+    * Easy (500 digits)
+    * Medium (100 digits)
+    * Hard (10 digits)
+    * Nightmare (1 digit)

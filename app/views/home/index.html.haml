@@ -1,3 +1,12 @@
+.difficulty
+  %form{action: "/", method: "get"}
+    %select{name: "difficulty", onchange: "$('form').submit()"}
+      %option Select Difficulty
+      %option{value: "easy"} Easy
+      %option{value: "medium"} Medium
+      %option{value: "hard"} Hurt me plenty
+      %option{value: "nightmare"} Nightmare
+
 
 %center
   - if @correct.nil?
@@ -15,10 +24,10 @@
       - if index == 0
         %a{href: "?guess=#{index}"}
           %span.sparkline= data.chars.to_a.join(",")
-          = data
+          %span.numbers= data
       - else
         %a{href: "?guess=#{index}"}
-          = data
+          %span.numbers= data
           %span.sparkline= data.chars.map{|c| -c.to_i}.join(",")
 
 %hr
@@ -45,4 +54,4 @@
 
   all_blue = { "-9:9": "#00f" }
 
-  $(".sparkline").sparkline("html", { type: 'bar', barWidth: 9, color: 'blue', colorMap: all_blue });
+  $(".sparkline").sparkline("html", { type: 'bar', barWidth: 8, color: 'blue', colorMap: all_blue });

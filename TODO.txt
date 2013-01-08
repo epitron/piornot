@@ -6,18 +6,22 @@
   |_ File.read("2012-10-10.bin").bytes.map{ |x| x.ord.to_s(16) }.join("").gsub(/[a-f]/,'')
   |_ http://jelzo.com/stuff/moo
 * Make numbers the same width as the bars
-* JQueryize it
-  - AJAX submits
-  - Animated YES! or NO! thing
+* JQuery animations/ajax
+  - When you click an answer, it slides down, a big X or checkmark stamps onto it, and it fades 
+out slightly
 * a "WTF is this?" link
+* Pretty fonts: http://www.fontsquirrel.com/
+* Align numbers and sparklines
 * Store current counter in session, instead of database (or redis)
 * Log results to database (for analysis)
+  - Statistics, high scores, etc.
 * Easy deployment script
 * Dropdowns:
   - Type:
     * PI vs. Random
     * PI vs. Pseudorandom
     * PI vs. e
+    * PI vs. Tau
   - Difficulty:
     * Easy (500 digits)
     * Medium (100 digits)

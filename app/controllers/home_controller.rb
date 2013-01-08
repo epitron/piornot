@@ -1,8 +1,19 @@
-$amount = 100
-
 class HomeController < ApplicationController
 
   def index
+    amount = case params[:difficulty]
+      when "easy"
+        100
+      when "medium"
+        50
+      when "hard"
+        20
+      when "nightmare"
+        1
+      else
+        100
+    end
+
     u = current_user
 
     if params[:reset]
@@ -16,30 +27,36 @@ class HomeController < ApplicationController
 
     @score, @total, @percent = u.stats
 
-    @data = [some_pi, some_random]
+    @data = [some_pi(amount), some_random(amount)]
     @data = @data.reverse if ( session[:correct_guess] = rand 0..1 ) > 0
   end
 
 private
 
-  def some_pi(amount=$amount)
-    open("pi.txt", "rb") do |f|
-      max = f.size - amount
-      min = 2
-
-      pos = rand(min..max)
+  def random_read(filename, amount)
+    open(filename, "rb") do |f|
+      pos = rand(0..f.size - amount)
       f.seek(pos)
-      data = f.read(amount)
+      f.read(amount)
+    end
+  end    
 
+  def some_pi(amount)
+    random_read("data/pi-billion.txt", amount).tap do |data|
       logger.info "pi: #{data}"
-
-      data
     end
   end
 
+  def some_random(amount)
+    random_read(Dir["data/random/*.digits"].sample, amount).tap do |data|
+      logger.info "random: #{data}"
+    end
+  end
 
-  def some_random(amount=$amount)
-    (0...amount).map { rand(0..9) }.join ''
+  def some_pseudorandom(amount)
+    data = (0...amount).map{ rand(0..9) }.join('').tap do |data|
+      logger.info "pseudorandom: #{data}"
+    end
   end
 
 end

@@ -1,0 +1,3 @@
+echo y | ks zeus
+rm .zeus.sock
+zeus start

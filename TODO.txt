@@ -2,6 +2,7 @@
                                                                     TODOs
 ============================================================================
 
+* Get a font with a pi symbol that looks like pi!
 * RANDOM.ORG numbers http://www.random.org/files/
   |_ File.read("2012-10-10.bin").bytes.map{ |x| x.ord.to_s(16) }.join("").gsub(/[a-f]/,'')
   |_ http://jelzo.com/stuff/moo

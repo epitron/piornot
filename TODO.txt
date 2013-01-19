@@ -2,6 +2,7 @@
                                                                     TODOs
 ============================================================================
 
+* "WTF is this?" link with modal help
 * Get a font with a pi symbol that looks like pi!
 * RANDOM.ORG numbers http://www.random.org/files/
   |_ File.read("2012-10-10.bin").bytes.map{ |x| x.ord.to_s(16) }.join("").gsub(/[a-f]/,'')
@@ -14,8 +15,9 @@ out slightly
 * Pretty fonts: http://www.fontsquirrel.com/
 * Align numbers and sparklines
 * Store current counter in session, instead of database (or redis)
-* Log results to database (for analysis)
-  - Statistics, high scores, etc.
+* Statistics for analysis
+  - which segments were easier for people to identify?
+  - high scores
 * Easy deployment script
 * Dropdowns:
   - Type:

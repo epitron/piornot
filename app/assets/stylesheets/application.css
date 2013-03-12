@@ -26,6 +26,11 @@ body {
   font-family: "ProximaNova", sans-serif;
 }
 
+h1 {
+  font-size: 40px;
+  font-weight: 300;
+}
+
 .pi {
   font-family: "Times New Roman", serif;
   font-size: 48px;
@@ -43,6 +48,11 @@ body {
   color: blue;
   text-decoration: none;
   // font-size: 0.5em;
+}
+
+.numbers {
+  font-family: monospace;
+  font-size: 16px;
 }
 
 .data a span {

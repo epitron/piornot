@@ -12,13 +12,31 @@
  *= require_tree .
  */
 
+@font-face {
+  font-family: 'ProximaNova';
+  src: url('/fonts/ProximaNova-Reg-webfont.eot');
+  src: url('/fonts/ProximaNova-Reg-webfont.eot?#iefix') format('eot'),
+       url('/fonts/ProximaNova-Reg-webfont.woff') format('woff'),
+       url('/fonts/ProximaNova-Reg-webfont.ttf') format('truetype'),
+       url('/fonts/ProximaNova-Reg-webfont.svg#webfont') format('svg');
+  font-weight: normal;
+  font-style: normal; }
+
 body {
-  font-family: "Lucida Sans Unicode", "Lucida Grande", Verdana, Geneva, sans-serif;
+  font-family: "ProximaNova", sans-serif;
 }
+
+.pi {
+  font-family: "Times New Roman", serif;
+  font-size: 48px;
+  font-style: italic;
+}
+
 
 .difficulty {
   right: 0px;
   position: absolute;
+  font-size: 10px;
 }
 
 .data a {

@@ -1,32 +1,32 @@
 .difficulty
+  Difficulty:
   %form{action: "/", method: "get"}
     %select{name: "difficulty", onchange: "$('form').submit()"}
-      %option Select Difficulty
-      %option{value: "easy"} Easy
-      %option{value: "medium"} Medium
-      %option{value: "hard"} Hurt me plenty
-      %option{value: "nightmare"} Nightmare
+      = options_for_select({Easy: "easy", Medium: "medium", Hard: "hard", Nightmare: "nightmare"}, params[:difficulty] || "easy")
 
 
 %center
   - if @correct.nil?
-    %h1 Which one is &pi;?
+    %h1
+      Which one is <span class="pi">&pi;?</span>
   - else
     - if @correct
-      %h1.correct Yes! That was &pi;!
+      %h1.correct
+        Yes! That was <span class="pi">&pi;!</span>
     - else
-      %h1.wrong NOT &pi;.
+      %h1.wrong
+        NOT <span class="pi">&pi;.</span>
 
   %hr
 
   - @data.each_with_index do |data, index|
     %p.data
       - if index == 0
-        %a{href: "?guess=#{index}"}
+        = link_to(guess: index, difficulty: params[:difficulty]) do
           %span.sparkline= data.chars.to_a.join(",")
           %span.numbers= data
       - else
-        %a{href: "?guess=#{index}"}
+        = link_to(guess: index, difficulty: params[:difficulty]) do
           %span.numbers= data
           %span.sparkline= data.chars.map{|c| -c.to_i}.join(",")
 

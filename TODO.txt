@@ -2,7 +2,6 @@
                                                                     TODOs
 ============================================================================
 
-* "WTF is this?" link with modal help
 * Get a font with a pi symbol that looks like pi!
 * RANDOM.ORG numbers http://www.random.org/files/
   |_ File.read("2012-10-10.bin").bytes.map{ |x| x.ord.to_s(16) }.join("").gsub(/[a-f]/,'')
@@ -11,7 +10,7 @@
 * JQuery animations/ajax
   - When you click an answer, it slides down, a big X or checkmark stamps onto it, and it fades 
 out slightly
-* a "WTF is this?" link
+* a "WTF is this?" link with modal help
 * Pretty fonts: http://www.fontsquirrel.com/
 * Align numbers and sparklines
 * Store current counter in session, instead of database (or redis)

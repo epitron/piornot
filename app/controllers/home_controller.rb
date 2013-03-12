@@ -9,7 +9,7 @@ class HomeController < ApplicationController
       when "hard"
         20
       when "nightmare"
-        1
+        2
       else
         100
     end
@@ -27,7 +27,10 @@ class HomeController < ApplicationController
 
     @score, @total, @percent = u.stats
 
+    # Load the digits
     @data = [some_pi(amount), some_random(amount)]
+
+    # Which hand is the pi in?
     @data = @data.reverse if ( session[:correct_guess] = rand 0..1 ) > 0
   end
 
@@ -39,7 +42,7 @@ private
       f.seek(pos)
       f.read(amount)
     end
-  end    
+  end
 
   def some_pi(amount)
     random_read("data/pi-billion.txt", amount).tap do |data|

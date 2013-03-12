@@ -20,6 +20,7 @@
   %hr
 
   - @data.each_with_index do |data, index|
+    - p [:data, index, data]
     %p.data
       - if index == 0
         = link_to(guess: index, difficulty: params[:difficulty]) do

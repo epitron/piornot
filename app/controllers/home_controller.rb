@@ -36,16 +36,16 @@ class HomeController < ApplicationController
 
 private
 
-  def random_read(filename, amount)
+  def random_read(filename, amount, starting_at=0)
     open(filename, "rb") do |f|
-      pos = rand(0..f.size - amount)
-      f.seek(pos)
-      f.read(amount)
+      pos = rand starting_at .. f.size-amount
+      f.seek pos
+      f.read amount
     end
   end
 
   def some_pi(amount)
-    random_read("data/pi-billion.txt", amount).tap do |data|
+    random_read("data/pi-billion.txt", amount, 2).tap do |data|
       logger.info "pi: #{data}"
     end
   end

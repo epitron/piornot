@@ -36,7 +36,7 @@
   (Score: #{@score}/#{@total} => #{@percent})
 
 
-%a.reset{href: "?reset=true"} Reset
+= link_to "Reset", {reset: true, difficulty: params[:difficulty]}, {class: "reset"}
 
 :javascript
   rainbow = {

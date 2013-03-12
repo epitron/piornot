@@ -1,0 +1,9 @@
+pi:
+
+  http://www.mit.edu/afs/sipb/contrib/pi/
+    http://stuff.mit.edu/afs/sipb/contrib/pi/pi-billion.txt
+
+random:
+  http://www.random.org/files/
+    http://www.random.org/files/20xx/20xx-xx-xx.bin
+      (Dating back to 2006-03-11)

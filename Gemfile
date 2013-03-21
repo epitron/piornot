@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '~> 3.2'
+gem 'rails', '~> 3.2.13'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -11,7 +11,7 @@ gem 'haml'
 gem 'i18n'
 
 group :production do
-  gem 'mysql', '~> 2.8.1'
+  gem 'mysql2' #, '~> 2.8.1'
 end
 
 # Gems used only for assets and not required
